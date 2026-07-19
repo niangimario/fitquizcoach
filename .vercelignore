@@ -1,0 +1,14 @@
+.git
+.gitignore
+README.md
+.prettier*
+.eslintignore
+eslint.config.js
+.tanstack
+.wrangler
+.vscode
+.idea
+*.log
+.DS_Store
+AGENTS.md
+bun.lock
