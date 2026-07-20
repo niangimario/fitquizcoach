@@ -194,7 +194,7 @@ export function Quiz() {
   const title = step.title.replace("{name}", name || "amigo");
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen w-full bg-background flex flex-col">
       <header className="border-b border-border/60 bg-card/80 backdrop-blur sticky top-0 z-10">
         <div className="max-w-2xl mx-auto px-3 sm:px-4 py-3 sm:py-4">
           <div className="flex items-center justify-between mb-2">
@@ -217,9 +217,9 @@ export function Quiz() {
         </div>
       </header>
 
-      <main className="flex-1 max-w-2xl w-full mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12">
+      <main className="flex-1 max-w-2xl w-full mx-auto px-3 sm:px-4 py-3 sm:py-6 md:py-12">
         <div key={step.key} className="animate-fade-in-up">
-          <div className="flex justify-center mb-4 sm:mb-6">
+          <div className="flex justify-center mb-3 sm:mb-6">
             <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-primary grid place-items-center shadow-elegant">
               <step.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
             </div>
@@ -228,7 +228,7 @@ export function Quiz() {
             {title}
           </h1>
           {step.subtitle && (
-            <p className="text-center text-xs sm:text-base text-muted-foreground mb-6 sm:mb-8">
+            <p className="text-center text-xs sm:text-base text-muted-foreground mb-4 sm:mb-6">
               {step.subtitle}
             </p>
           )}
@@ -236,8 +236,8 @@ export function Quiz() {
           <div
             className={
               step.key === "gender"
-                ? "grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8"
-                : "grid grid-cols-1 gap-2 sm:gap-3 mt-6 sm:mt-8"
+                ? "grid grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6"
+                : "grid grid-cols-1 gap-2 sm:gap-3 mt-4 sm:mt-6"
             }
           >
             {step.options.map((opt) =>
@@ -293,8 +293,8 @@ export function Quiz() {
 
 function Intro({ onStart }: { onStart: () => void }) {
   return (
-    <div className="min-h-screen bg-gradient-hero px-3 sm:px-4 py-6 sm:py-8 flex justify-center">
-      <div className="max-w-xl w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-5 sm:p-8 md:p-10 animate-fade-in-up">
+    <div className="min-h-screen w-full bg-gradient-hero px-3 sm:px-4 py-3 sm:py-6 flex justify-center">
+      <div className="max-w-xl w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-4 sm:p-6 md:p-8 animate-fade-in-up">
         <div className="flex justify-center gap-2 mb-3 sm:mb-4">
           <span className="px-2 sm:px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide">
             +12.400 pessoas já fizeram
@@ -352,17 +352,17 @@ function Intro({ onStart }: { onStart: () => void }) {
 
 function GenderStep({ onNext }: { onNext: (gender: string) => void }) {
   return (
-    <div className="min-h-screen bg-gradient-hero px-3 sm:px-4 py-6 sm:py-8 flex justify-center">
-      <div className="max-w-md w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-5 sm:p-8 animate-fade-in-up">
-        <div className="flex justify-center mb-5 sm:mb-6">
+    <div className="min-h-screen w-full bg-gradient-hero px-3 sm:px-4 py-6 sm:py-8 flex justify-center">
+      <div className="max-w-md w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-4 sm:p-6 animate-fade-in-up">
+        <div className="flex justify-center mb-3 sm:mb-4">
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-primary grid place-items-center shadow-elegant">
             <User className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
           </div>
         </div>
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-foreground mb-2">
-          Qual é o seu gênero?
+          Como se chama?
         </h1>
-        <p className="text-center text-sm sm:text-base text-muted-foreground mb-5 sm:mb-6">
+        <p className="text-center text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
           Vamos personalizar o seu plano
         </p>
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -403,12 +403,12 @@ function NameStep({ onNext }: { onNext: (name: string) => void }) {
     onNext(trimmed.split(" ")[0]);
   };
   return (
-    <div className="min-h-screen bg-gradient-hero px-3 sm:px-4 py-6 sm:py-8 flex justify-center">
+    <div className="min-h-screen w-full bg-gradient-hero px-3 sm:px-4 py-3 sm:py-6 flex justify-center">
       <form
         onSubmit={submit}
-        className="max-w-md w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-5 sm:p-8 animate-fade-in-up"
+        className="max-w-md w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-4 sm:p-6 animate-fade-in-up"
       >
-        <div className="flex justify-center mb-5 sm:mb-6">
+        <div className="flex justify-center mb-3 sm:mb-4">
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-primary grid place-items-center shadow-elegant">
             <User className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
           </div>
@@ -416,7 +416,7 @@ function NameStep({ onNext }: { onNext: (name: string) => void }) {
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-foreground mb-2">
           Como se chama?
         </h1>
-        <p className="text-center text-sm sm:text-base text-muted-foreground mb-5 sm:mb-6">
+        <p className="text-center text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
           Vamos personalizar tudo com o seu nome
         </p>
         <input
@@ -430,7 +430,7 @@ function NameStep({ onNext }: { onNext: (name: string) => void }) {
         <button
           type="submit"
           disabled={value.trim().length < 2}
-          className="mt-5 sm:mt-6 w-full bg-gradient-primary text-primary-foreground font-bold py-3 sm:py-4 px-4 rounded-lg sm:rounded-2xl text-base sm:text-lg shadow-elegant hover:shadow-glow transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+          className="mt-3 sm:mt-4 w-full bg-gradient-primary text-primary-foreground font-bold py-3 sm:py-4 px-4 rounded-lg sm:rounded-2xl text-base sm:text-lg shadow-elegant hover:shadow-glow transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Continuar →
         </button>
@@ -452,9 +452,9 @@ function PhotoStep({ name, onNext }: { name: string; onNext: (photo: string | nu
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero px-3 sm:px-4 py-6 sm:py-8 flex justify-center">
-      <div className="max-w-md w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-5 sm:p-8 animate-fade-in-up">
-        <div className="flex justify-center mb-5 sm:mb-6">
+    <div className="min-h-screen w-full bg-gradient-hero px-3 sm:px-4 py-3 sm:py-6 flex justify-center">
+      <div className="max-w-md w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-4 sm:p-6 animate-fade-in-up">
+        <div className="flex justify-center mb-3 sm:mb-4">
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-primary grid place-items-center shadow-elegant">
             <Camera className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
           </div>
@@ -462,7 +462,7 @@ function PhotoStep({ name, onNext }: { name: string; onNext: (photo: string | nu
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-foreground mb-2">
           {name}, envie a sua foto actual
         </h1>
-        <p className="text-center text-xs sm:text-sm text-muted-foreground mb-5 sm:mb-6">
+        <p className="text-center text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
           Precisamos ver o seu físico actual para personalizar o plano. A foto fica{" "}
           <b>apenas no seu dispositivo</b>.
         </p>
@@ -512,7 +512,7 @@ function PhotoStep({ name, onNext }: { name: string; onNext: (photo: string | nu
         <button
           onClick={() => onNext(preview)}
           disabled={!preview}
-          className="mt-4 w-full bg-gradient-primary text-primary-foreground font-bold py-3 sm:py-4 px-4 rounded-lg sm:rounded-2xl text-base sm:text-lg shadow-elegant hover:shadow-glow transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+          className="mt-3 sm:mt-4 w-full bg-gradient-primary text-primary-foreground font-bold py-3 sm:py-4 px-4 rounded-lg sm:rounded-2xl text-base sm:text-lg shadow-elegant hover:shadow-glow transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Continuar →
         </button>
@@ -570,9 +570,9 @@ function Processing({
   const avatar = photo || (gender === "feminino" ? femaleImg : maleImg);
 
   return (
-    <div className="min-h-screen bg-gradient-hero px-3 sm:px-4 py-6 sm:py-8 flex justify-center">
-      <div className="max-w-md w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-5 sm:p-8 text-center">
-        <div className="relative w-24 h-24 sm:w-40 sm:h-40 mx-auto mb-4 sm:mb-6">
+    <div className="min-h-screen w-full bg-gradient-hero px-3 sm:px-4 py-3 sm:py-6 flex justify-center">
+      <div className="max-w-md w-full bg-card rounded-2xl sm:rounded-3xl shadow-elegant p-4 sm:p-6 text-center">
+        <div className="relative w-24 h-24 sm:w-40 sm:h-40 mx-auto mb-3 sm:mb-4">
           <div className="absolute inset-0 rounded-full bg-gradient-primary animate-pulse-ring" />
           <div className="absolute inset-2 rounded-full bg-card grid place-items-center overflow-hidden">
             <img src={avatar} alt="" className="w-full h-full object-cover" />
