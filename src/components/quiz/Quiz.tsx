@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import maleImg from "@/assets/male.png";
 import femaleImg from "@/assets/female.png";
-import antesDepoisImg from "@/assets/antes-depois.jpg";
+import antesDepoisAsset from "@/assets/antes-depois.jpg.asset.json";
 import {
   User,
   Cake,
@@ -316,7 +316,7 @@ function Intro({ onStart }: { onStart: () => void }) {
 
         <div className="my-6 rounded-2xl overflow-hidden shadow-elegant max-h-96 md:max-h-full">
           <img
-            src={antesDepoisImg}
+            src={antesDepoisAsset.url}
             alt="Resultado antes e depois"
             className="w-full h-auto block object-cover"
             loading="lazy"
